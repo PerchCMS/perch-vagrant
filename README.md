@@ -1,13 +1,15 @@
 perch-vagrant
 =============
 
-** I just built this - it's been tested on mine and Drew's Mac only - so at this point probably only for the Vagrant experienced. I'd be interested in feedback as I'd like to write up a guide for Perchers who haven't used Vagrant before.**
+*I just built this - it's been tested on mine and Drew's Mac only - so at this point probably only for the Vagrant experienced. I'd be interested in feedback as I'd like to write up a guide for Perchers who haven't used Vagrant before.*
 
 A simple packaged Vagrant environment for [Perch](http://grabaperch.com) sites. Not really Perch specific - it just sets up a simple LAMP environment and allows you to run multiple sites from one VM, rather than needing to run multiple VMs.
 
 Uses hiera for the configuration so you just need to edit the Vagrantfile to get it running and then set up your sites in heira. No Puppet knowledge needed.
 
-I built this on a Mac, it uses nfs which gets ignored on Windows. If you are running Vagrant on Windows, it blows up and you know why, send a pull request!
+I built this on a Mac, it uses nfs which gets ignored on Windows. If you are running Vagrant on Windows, it blows up and you know why, send a pull request! Ideally I'll make that a setting but this is very much "works on my machine" at present!
+
+I'm using a Debian base box, the Puppet manifests are currently Debian only.
 
 ## To run this
 
