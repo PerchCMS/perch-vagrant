@@ -16,5 +16,6 @@ class php(
     ensure     => file,
     content => template("php/php.ini.erb"),
     notify     => Service["apache2"],
+    require    => Package["php5"],
   }
 }
