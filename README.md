@@ -1,8 +1,6 @@
 perch-vagrant
 =============
 
-*I just built this - it's been tested on mine and Drew's Mac only - so at this point probably only for the Vagrant experienced. I'd be interested in feedback as I'd like to write up a guide for Perchers who haven't used Vagrant before.*
-
 A simple packaged Vagrant environment for [Perch](http://grabaperch.com) sites. Not really Perch specific - it just sets up a simple LAMP environment and allows you to run multiple sites from one VM, rather than needing to run multiple VMs.
 
 Uses hiera for the configuration so you just need to edit the Vagrantfile to get it running and then set up your sites in heira. No Puppet knowledge needed.
@@ -22,6 +20,12 @@ Edit the Vagrantfile, set the webroot to be the folder in which individual site 
 Use an IP address not on your network. You will need to edit your hosts file or other internal DNS to map site URLs to that IP address.
 
 The rest of your config happens via Hiera. In `puppet/manifests/hiera/config.yaml` you can set up some sites, databases and specify PHP.ini values.
+
+The values for PHP Version should be one of:
+
+- 5.4
+- 5.5
+- 5.6
 
 Put your site folders into the folder you specified in the Vagrantfile and set the docroot as `/var/www/foldername`
 

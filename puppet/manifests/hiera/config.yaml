@@ -1,5 +1,7 @@
 mysql_root_password: 'vagrant'
 
+php_version: '5.5'
+
 php_upload_max_filesize: '16M'
 php_max_file_uploads: '20'
 php_memory_limit: '128M'
@@ -11,17 +13,18 @@ php_modules:
   - "php5-cli"
   - "php5-mysql"
   - "php5-gd"
+  - "php5-imagick"
   - "php5-curl"
   - "libapache2-mod-php5"
 
 apache_vhosts:
   site1:
     vhost_docroot: '/var/www/test_site1'
-    vhost_name: 'perch-vagrant.eoms'
+    vhost_name: 'site1.dev'
     vhost_options: 'All'
   site2:
     vhost_docroot: '/var/www/test_site2'
-    vhost_name: 'site2'
+    vhost_name: 'site2.dev'
     vhost_options: 'All'
 
 mysql_db:
