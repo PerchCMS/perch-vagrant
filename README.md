@@ -5,9 +5,9 @@ A simple packaged Vagrant environment for [Perch](http://grabaperch.com) sites. 
 
 Uses hiera for the configuration so you just need to edit the Vagrantfile to get it running and then set up your sites in heira. No Puppet knowledge needed.
 
-I built this on a Mac, it uses nfs which gets ignored on Windows. If you are running Vagrant on Windows, it blows up and you know why, send a pull request! Ideally I'll make that a setting but this is very much "works on my machine" at present!
+I built this on a Mac, there are people using this on Windows successfully but if you know of any issues let me know so I can fix them.
 
-I'm using a Debian base box, the Puppet manifests are currently Debian only.
+I'm using a Debian base box, the Puppet manifests are currently Debian only. I'm keeping this on Wheezy (old Stable) as by default that includes PHP 5.4, I'm using the dotdeb packages for newer PHPs. That is deliberate as so many Perch customers are stuck with old hosting with old PHP.
 
 ## To run this
 
