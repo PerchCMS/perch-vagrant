@@ -6,7 +6,7 @@ define apache::vhost(
 ) {
 	
   file {
-    "/etc/apache2/sites-available/${vhost_name}":
+    "/etc/apache2/sites-available/${vhost_name}.conf":
       content => template("apache/vhost-default.conf.erb"),
       owner   => 'root',
       group   => 'root',
@@ -14,9 +14,9 @@ define apache::vhost(
       require => Package['apache2'],
       notify => Service['apache2'];
 
-      "/etc/apache2/sites-enabled/${vhost_name}":
+      "/etc/apache2/sites-enabled/${vhost_name}.conf":
       ensure => link,
-      target => "/etc/apache2/sites-available/${vhost_name}",
+      target => "/etc/apache2/sites-available/${vhost_name}.conf",
       notify => Service['apache2'];
    }
 
