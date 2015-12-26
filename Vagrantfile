@@ -16,9 +16,8 @@ CONFIG_MEMORY = "1024"
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "debian73"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box"
-  
+  config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
+
   config.vm.network :private_network, ip: CONFIG_IP
   config.ssh.forward_agent = true
 
@@ -27,7 +26,7 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--memory", CONFIG_MEMORY]
     v.customize ["modifyvm", :id, "--name", CONFIG_NAME]
   end
-  
+
   nfs_setting = RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /linux/
 
   config.vm.synced_folder CONFIG_WEBROOT, "/var/www", id: "vagrant-root" , :nfs => nfs_setting
@@ -36,9 +35,8 @@ Vagrant.configure("2") do |config|
 
   # Enable the Puppet provisioner, point it to our files
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file = "site.pp"
-    puppet.module_path = "puppet/modules"
-    puppet.hiera_config_path = "puppet/hiera.yaml"
+    puppet.environment_path = "puppet/environments"
+    puppet.hiera_config_path = "hiera.yaml"
+    puppet.environment = "vagrant"
   end
 end

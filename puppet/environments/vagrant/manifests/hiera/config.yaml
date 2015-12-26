@@ -1,6 +1,6 @@
 mysql_root_password: 'vagrant'
 
-php_version: '5.5'
+php_version: '5.6'
 
 php_upload_max_filesize: '16M'
 php_max_file_uploads: '20'
@@ -15,6 +15,7 @@ php_modules:
   - "php5-gd"
   - "php5-imagick"
   - "php5-curl"
+  - "php5-intl"
   - "libapache2-mod-php5"
 
 apache_vhosts:

@@ -7,7 +7,7 @@ Uses hiera for the configuration so you just need to edit the Vagrantfile to get
 
 I built this on a Mac, there are people using this on Windows successfully but if you know of any issues let me know so I can fix them.
 
-I'm using a Debian base box, the Puppet manifests are currently Debian only. I'm keeping this on Wheezy (old Stable) as by default that includes PHP 5.4, I'm using the dotdeb packages for newer PHPs. That is deliberate as so many Perch customers are stuck with old hosting with old PHP.
+I've upgraded this to Puppet 4 and Ubuntu rather than Debian.
 
 ## To run this
 
@@ -23,7 +23,6 @@ The rest of your config happens via Hiera. In `puppet/manifests/hiera/config.yam
 
 The values for PHP Version should be one of:
 
-- 5.4
 - 5.5
 - 5.6
 
